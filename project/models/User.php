@@ -69,5 +69,33 @@ class User {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    // Phương thức xử lý remember token
+    public function saveRememberToken($user_id, $token) {
+        $query = "UPDATE " . $this->table_name . " SET remember_token = ? WHERE id = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(1, $token);
+        $stmt->bindParam(2, $user_id);
+        return $stmt->execute();
+    }
+
+    public function getUserByRememberToken($token) {
+        $query = "SELECT id, username, email, full_name FROM " . $this->table_name . " WHERE remember_token = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(1, $token);
+        $stmt->execute();
+
+        if ($stmt->rowCount() > 0) {
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
+        return false;
+    }
+
+    public function clearRememberToken($user_id) {
+        $query = "UPDATE " . $this->table_name . " SET remember_token = NULL WHERE id = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(1, $user_id);
+        return $stmt->execute();
+    }
 }
 ?> 

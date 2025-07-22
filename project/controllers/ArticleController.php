@@ -29,7 +29,7 @@ class ArticleController {
         
         if (!$article) {
             $_SESSION['error'] = 'Bài viết không tồn tại!';
-            redirect('index.php');
+            redirect('');
         }
         
         include 'views/articles/show.php';
@@ -45,17 +45,17 @@ class ArticleController {
             
             if (empty($title) || empty($content)) {
                 $_SESSION['error'] = 'Vui lòng nhập đầy đủ thông tin!';
-                redirect('index.php?page=create');
+                redirect('');
             }
             
             $article_id = $this->article->createArticle($title, $content, $_SESSION['user_id'], $status);
             
             if ($article_id) {
                 $_SESSION['success'] = 'Tạo bài viết thành công!';
-                redirect('index.php?page=manage');
+                redirect('');
             } else {
                 $_SESSION['error'] = 'Có lỗi xảy ra khi tạo bài viết!';
-                redirect('index.php?page=create');
+                redirect('');
             }
         } else {
             include 'views/articles/create.php';
@@ -69,13 +69,13 @@ class ArticleController {
         
         if (!$article) {
             $_SESSION['error'] = 'Bài viết không tồn tại!';
-            redirect('index.php?page=manage');
+            redirect('');
         }
         
         // Chỉ cho phép tác giả chỉnh sửa bài viết của mình
         if ($article['author_id'] != $_SESSION['user_id']) {
             $_SESSION['error'] = 'Bạn không có quyền chỉnh sửa bài viết này!';
-            redirect('index.php?page=manage');
+            redirect('');
         }
         
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -85,17 +85,17 @@ class ArticleController {
             
             if (empty($title) || empty($content)) {
                 $_SESSION['error'] = 'Vui lòng nhập đầy đủ thông tin!';
-                redirect('index.php?page=edit&id=' . $id);
+                redirect('');
             }
             
             $result = $this->article->updateArticle($id, $title, $content, $status);
             
             if ($result) {
                 $_SESSION['success'] = 'Cập nhật bài viết thành công!';
-                redirect('index.php?page=manage');
+                redirect('');
             } else {
                 $_SESSION['error'] = 'Có lỗi xảy ra khi cập nhật bài viết!';
-                redirect('index.php?page=edit&id=' . $id);
+                redirect('');
             }
         } else {
             include 'views/articles/edit.php';
@@ -109,13 +109,13 @@ class ArticleController {
         
         if (!$article) {
             $_SESSION['error'] = 'Bài viết không tồn tại!';
-            redirect('index.php?page=manage');
+            redirect('');
         }
         
         // Chỉ cho phép tác giả xóa bài viết của mình
         if ($article['author_id'] != $_SESSION['user_id']) {
             $_SESSION['error'] = 'Bạn không có quyền xóa bài viết này!';
-            redirect('index.php?page=manage');
+            redirect('');
         }
         
         $result = $this->article->deleteArticle($id);
@@ -126,7 +126,7 @@ class ArticleController {
             $_SESSION['error'] = 'Có lỗi xảy ra khi xóa bài viết!';
         }
         
-        redirect('index.php?page=manage');
+        redirect('');
     }
 
     public function manage() {

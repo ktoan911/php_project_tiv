@@ -16,6 +16,14 @@
             </div>
             
             <div class="form-group">
+                <label class="checkbox-container">
+                    <input type="checkbox" name="remember_me" value="1">
+                    <span class="checkmark"></span>
+                    Ghi nhớ đăng nhập
+                </label>
+            </div>
+            
+            <div class="form-group">
                 <button type="submit" class="btn btn-primary">Đăng nhập</button>
             </div>
         </form>
