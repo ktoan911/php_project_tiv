@@ -1,0 +1,111 @@
+<!-- khai báo đang sử dụng html 5 -->
+<!DOCTYPE html>
+<!-- ngôn ngữ trang web là tiếng việt -->
+<html lang="vi"> 
+<!-- dùng để cung cấp thông tin và tải tài nguyên liên quan -->
+<head>
+    <!-- sử dụng ngôn ngữ theo utf8 -->
+    <meta charset="UTF-8">
+    <!-- đảm bảo trang web hiển thị đúng trên các thiết bị -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- tiêu đề của trang web -->
+    <title>Document</title>
+</head>
+<!-- chứa nội dung chính của trang web -->
+<body>
+    <!-- tiêu đề chính của trang web, các tiêu đề sau 2-6, tiêu đề chính buộc phải là <h1> chứ không được set theo cỡ chữ, sử dụng tiêu đề sai có thể khiến trình duyệt hiểu sai trang web, phải dùng theo thứ tự từ h2 là con h1, .... -->
+    <h1>Tiêu đề 1</h1>
+    <!-- tiêu đề phụ -->
+    <h2>Tiêu đề 2</h2>
+    <h3>Tiêu đề 3</h3>
+    <!-- thẻ đoạn văn -->
+     <!-- b là in đậm, i là in nghiêng, u là gạch chân -->
+    <p><b>Đây là</b> <i>một đoạn văn</i> <u>bản trong trang web</u>.</p>
+
+    <!-- thẻ liên kết, href là thuộc tính chỉ đường dẫn đến trang web khác -->
+    <!-- title là thuộc tính mô tả liên kết, khi di chuột vào sẽ hiển thị tooltip -->
+    <!-- target="_blank" mở liên kết trong tab mới, rel="noopener noreferrer" là bảo mật khi mở liên kết -->
+    <a href="https://www.example.com" title="example" target="_blank" rel="noopener noreferrer">Đây là một liên kết</a>
+    <a href="./assets/babythree1.jpg" download="anhdep.png"> tải ảnh </a>
+    <!-- thẻ hình ảnh, src là đường dẫn đến hình ảnh, alt là mô tả hình ảnh -->
+     <!-- file hình ảnh thường rất nặng cần nhiều thgian để load -> chuyển sang định dạng webp -->
+    <img src="./assets/babythree1.webp" alt="Hình ảnh minh họa" width="300px" height="300px">
+
+    <!-- thẻ video -->
+    <video poster="./assets/video-poster.jpg" width="320" height="240" controls>
+        <source src="./assets/video.mp4" type="video/mp4">
+        Trình duyệt của bạn không hỗ trợ thẻ video.
+    </video>
+
+    <!-- thẻ âm thanh -->
+    <audio controls>
+        <source src="./assets/audio.mp3" type="audio/mpeg">
+        Trình duyệt của bạn không hỗ trợ thẻ âm thanh.
+    </audio>
+
+    <!-- thẻ danh sách không có số thứ tự unorder list -->
+    <!-- type = "disc" thì danh sách sẽ có dấu chấm tròn, type = "circle" thì danh sách sẽ có dấu chấm tròn rỗng, type = "square" thì danh sách sẽ có dấu chấm vuông -->
+    <ul type = "None">
+        <!-- list item -->
+        <li>Danh sách mục 1</li>
+        <li>Danh sách mục 2</li>
+        <li>Danh sách mục 3</li>
+    </ul>
+
+    <!-- thẻ danh sách có số thứ tự order list -->
+     <!-- type = 1 thì danh sách sẽ bắt đầu từ số 1, type = "A" thì danh sách sẽ bắt đầu từ chữ cái A -->
+    <ol type = "1">
+        <li>Danh sách mục 1</li>
+        <li>Danh sách mục 2</li>
+        <li>Danh sách mục 3</li>    
+    </ol>
+
+    <!-- danh sách mô tả là description list , có ý nghĩa được chia ra bởi các mô tả-->
+    <dl>
+        <dt>Danh sách mô tả 1</dt>
+        <dd>Mô tả cho danh sách mô tả 1</dd>
+        <dt>Danh sách mô tả 2</dt>
+        <dd>Mô tả cho danh sách mô tả 2</dd>
+        <dt>Danh sách mô tả 3</dt>
+        <dd>Mô tả cho danh sách mô tả 3</dd>
+    </dl>
+
+    <!-- thẻ bảng -->
+     <!-- thẻ table bao bọc toàn bộ bảng, thẻ tr bao bọc từng hàng, thẻ th là tiêu đề cột, thẻ td là dữ liệu cột -->
+    <table border="1">
+        <!-- tiêu đề bảng -->
+        <caption>Tiêu đề bảng</caption>
+        <!-- hàng tiêu đề -->
+        <thead>
+            <tr>
+                <th>Tiêu đề 1</th>
+                <th>Tiêu đề 2</th>
+                <th>Tiêu đề 3</th>
+            </tr>
+        </thead>
+        <!-- thân bảng -->
+        <tbody>
+            <tr>
+                <td>Dữ liệu 1</td>
+                <td>Dữ liệu 2</td>
+                <td>Dữ liệu 3</td>
+            </tr>
+            <tr>
+                <td>Dữ liệu 4</td>
+                <td>Dữ liệu 5</td>
+                <td>Dữ liệu 6</td>
+            </tr>
+        </tbody>
+        <!-- chân bảng -->
+         <!-- scope là phạm vi của ô trong bảng -->
+        <tfoot>
+            <tr>
+                <th scope="row" colspan="2">Tổng cộng</th>
+                <td>6</td>
+            </tr>
+    </table>
+</body>
+</html>
+    </table>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- form đăng nhập -->
+    <!-- action là thuộc tính chỉ đường dẫn đến trang xử lý dữ liệu khi người dùng gửi form (route) -->
+    <form action="login">
+        <!-- input là trường nhập liệu, thuộc tính type quyết định kiểu dữ liệu mà người dùng có thể nhập-->
+         <label for="">email:</label>
+         <br>
+         <!-- type là thuộc tính chỉ định kiểu dữ liệu mà người dùng có thể nhập -->
+            <!-- placeholder là thuộc tính hiển thị văn bản gợi ý trong trường nhập liệu -->
+             <!-- required là thuộc tính bắt buộc người dùng phải nhập dữ liệu -->
+        <input type="email" id="email" name="email" placeholder="Nhập email của bạn" required>
+        <br>
+        <br>
+        <label for="">password:</label>
+         <br>
+         <!-- type là thuộc tính chỉ định kiểu dữ liệu mà người dùng có thể nhập -->
+            <!-- placeholder là thuộc tính hiển thị văn bản gợi ý trong trường nhập liệu -->
+             <!-- required là thuộc tính bắt buộc người dùng phải nhập dữ liệu -->
+              <!-- name dùng để đặt tên 1 dữ liệu trong form, còn id dùng để liên kết các thẻ -->
+        <input type="password" id="password" name="password" placeholder="Nhập password của bạn" required>
+        <br>
+        <br>
+
+        <label for="remember">
+        <!-- checkbox là ô chọn, checked là thuộc tính đánh dấu ô chọn đã được chọn -->
+        <input type="checkbox" id="remember" name="remember" checked>
+        Ghi nhớ đăng nhập
+        </label>
+        <br>
+        <br>
+        <button>Đăng nhập</button>
+        <br>
+         <label for="story"></label>
+        <textarea id="story" name="story" rows="4" cols="50" placeholder="Kể cho chúng tôi nghe về bạn..."></textarea>
+    </form>
+</body>
+</html>
